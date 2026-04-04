@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Checkbox for toggling menu on mobile -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="logo-icon">WA</span>
+                </div>
+                <div class="logo-text">
+                    <span class="work-space">WORK SPACE</span>
+                    <span class="task-atelier">Good Day</span>
+                </div>
+                <!-- Close btn for mobile -->
+                <label for="menu-toggle" class="close-sidebar"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <div class="task menu-section">
+                <div class="box-aside box-task active" id="all_Tasks">
+                    <i class="fa-solid fa-square-check"></i> <span>All Tasks</span>
+                </div>
+                <div class="box-aside box-task">
+                    <i class="fa-solid fa-circle-check"></i> <span>Done</span>
+                </div>
+            </div>
+
+            <div class="folder menu-section">
+                <div class="section-title">FOLDERS</div>
+                <div class="box-aside box-folder" id="work">
+                    <i class="fa-solid fa-folder folder-work"></i> <span>Work</span>
+                </div>
+                <div class="box-aside box-folder" id="personal">
+                    <i class="fa-solid fa-user folder-personal"></i> <span>Personal</span>
+                </div>
+                <div class="box-aside box-folder" id="university">
+                    <i class="fa-solid fa-graduation-cap folder-university"></i> <span>University</span>
+                </div>
+                <div class="box-aside box-folder" id="home">
+                    <i class="fa-solid fa-house folder-home"></i> <span>Home</span>
+                </div>
+            </div>
+
+            <div class="help menu-section">
+                <div class="box-aside box-help">
+                    <i class="fa-solid fa-circle-question"></i> <span>Help</span>
+                </div>
+                <div class="box-aside box-help">
+                    <i class="fa-brands fa-github"></i> <span> <a
+                            href="https://github.com/IgnacioCastroT/Project-Todo-List-solutions">Repository</a></span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <header>
+                <nav>
+                    <div class="head_left">
+                        <label for="menu-toggle" class="mobile-menu-btn">
+                            <i class="fa-solid fa-bars"></i>
+                        </label>
+                        <div class="title">The Methodical Minimalist</div>
+                        <div class="search-container">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="search" placeholder="Search tasks, docs...">
+                        </div>
+                    </div>
+                    <div class="head_right">
+                        <div class="icon-btn"><i class="fa-solid fa-bell"></i></div>
+                        <div class="icon-btn"><i class="fa-solid fa-gear"></i></div>
+                        <div class="user_icon"><img src="https://i.pravatar.cc/150?img=47" alt="User Avatar"></div>
+                    </div>
+                </nav>
+            </header>
+            <div class="main-content">
+                <h1 class="main-title">My Workspace</h1>
+                <p class="main-description">Organize your thoughts and execute with precision. Focus on what matters
+                    most.</p>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
