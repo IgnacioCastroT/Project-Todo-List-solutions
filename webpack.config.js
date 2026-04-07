@@ -2,14 +2,12 @@ import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
-  mode: "production", // 👈 CAMBIAR
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
-
-    // 👇 CLAVE PARA GITHUB PAGES
     publicPath: "/Project-Todo-List-solutions/",
   },
   plugins: [
