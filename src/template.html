@@ -30,24 +30,32 @@
                 <div class="box-aside box-task active" id="all_Tasks">
                     <i class="fa-solid fa-square-check"></i> <span>All Tasks</span>
                 </div>
-                <div class="box-aside box-task">
+                <div class="box-aside box-task" id="done_Tasks">
                     <i class="fa-solid fa-circle-check"></i> <span>Done</span>
                 </div>
             </div>
 
             <div class="folder menu-section">
                 <div class="section-title">FOLDERS</div>
-                <div class="box-aside box-folder" id="work">
+                <div class="box-aside box-folder" id="work" data-folder="Work">
                     <i class="fa-solid fa-folder folder-work"></i> <span>Work</span>
+                    <i class="fa-solid fa-trash folder-action"></i>
                 </div>
-                <div class="box-aside box-folder" id="personal">
+                <div class="box-aside box-folder" id="personal" data-folder="Personal">
                     <i class="fa-solid fa-user folder-personal"></i> <span>Personal</span>
+                    <i class="fa-solid fa-trash folder-action"></i>
                 </div>
-                <div class="box-aside box-folder" id="university">
+                <div class="box-aside box-folder" id="university" data-folder="University">
                     <i class="fa-solid fa-graduation-cap folder-university"></i> <span>University</span>
+                    <i class="fa-solid fa-trash folder-action"></i>
                 </div>
-                <div class="box-aside box-folder" id="home">
+                <div class="box-aside box-folder" id="home" data-folder="Home">
                     <i class="fa-solid fa-house folder-home"></i> <span>Home</span>
+                    <i class="fa-solid fa-trash folder-action"></i>
+                </div>
+
+                <div class="box-aside box-folder add-folder-btn" id="add_folder">
+                    <i class="fa-solid fa-plus"></i> <span>New Folder</span>
                 </div>
             </div>
 
@@ -72,7 +80,7 @@
                         <div class="title">The Methodical Minimalist</div>
                         <div class="search-container">
                             <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="search" placeholder="Search tasks, docs...">
+                            <input type="search" placeholder="Search tasks...">
                         </div>
                     </div>
                     <div class="head_right">
@@ -87,8 +95,92 @@
                 <p class="main-description">Organize your thoughts and execute with precision. Focus on what matters
                     most.</p>
             </div>
+
+            <!-- Floating Action Button -->
+            <button id="add-task-btn" class="fab-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </main>
     </div>
+
+    <!-- Task Modal -->
+    <dialog id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>New Task</h2>
+                <button id="close-modal-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="new-task-form">
+                <div class="form-group">
+                    <label for="task-title">Title</label>
+                    <input type="text" id="task-title" name="title" placeholder="e.g., Design System Audit" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-desc">Description</label>
+                    <textarea id="task-desc" name="description" placeholder="A brief description of the task..."
+                        rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-date">Due Date</label>
+                        <input type="date" id="task-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority" name="priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="task-category">Folder</label>
+                    <select id="task-category" name="category">
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="University">University</option>
+                        <option value="Home">Home</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel-task-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Task</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Folder Modal -->
+    <dialog id="folder-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>New Folder</h2>
+                <button id="close-folder-modal-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="new-folder-form">
+                <div class="form-group">
+                    <label for="folder-name">Folder Name</label>
+                    <input type="text" id="folder-name" name="name" placeholder="e.g., Grocery List" required>
+                </div>
+                <div class="form-group">
+                    <label for="folder-color">Color Theme</label>
+                    <select id="folder-color" name="color">
+                        <option value="blue">Blue</option>
+                        <option value="pink">Pink</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="purple">Purple</option>
+                        <option value="orange">Orange</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel-folder-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Folder</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
 </body>
 
 </html>
